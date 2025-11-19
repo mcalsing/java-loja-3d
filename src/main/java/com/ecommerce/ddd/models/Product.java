@@ -9,42 +9,63 @@ public class Product {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String name;
+  @ManyToOne
+  private Shade lampShade;
 
-  private String color;
+  private String lampShadeColor;
 
-  private String type;
+  @ManyToOne
+  private Base lampBase;
+
+  private String lampBaseColor;
 
   private double price;
 
   private Product() {
   }
 
-  public Product(double price, String type, String color, String name) {
+  public Product(double price, String lampBaseColor, Base lampBase, String lampShadeColor, Shade lampShade, String name) {
     this.price = price;
-    this.type = type;
-    this.color = color;
-    this.name = name;
+    this.lampBaseColor = lampBaseColor;
+    this.lampBase = lampBase;
+    this.lampShadeColor = lampShadeColor;
+    this.lampShade = lampShade;
   }
 
-  public String getName() {
-    return name;
+  public Long getId() {
+    return id;
   }
 
-  public String getColor() {
-    return color;
+  public Shade getLampShadeType() {
+    return lampShade;
   }
 
-  public void setColor(String color) {
-    this.color = color;
+  public void setLampShadeType(Shade lampShadeType) {
+    this.lampShade = lampShadeType;
   }
 
-  public String getType() {
-    return type;
+  public String getLampShadeColor() {
+    return lampShadeColor;
   }
 
-  public void setType(String type) {
-    this.type = type;
+  public void setLampShadeColor(String lampShadeColor) {
+    this.lampShadeColor = lampShadeColor;
+  }
+
+  public Base getLampBase() {
+    return lampBase;
+  }
+
+  public void setLampBase(Base lampBaseType) {
+    this.lampBase = lampBaseType;
+  }
+
+  public String getLampBaseColor() {
+    return lampBaseColor;
+  }
+
+  public void setLampBaseColor(String lampBaseColor) {
+    this.lampBaseColor = lampBaseColor;
   }
 
   public double getPrice() {
@@ -53,13 +74,5 @@ public class Product {
 
   public void setPrice(double price) {
     this.price = price;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
   }
 }
