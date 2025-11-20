@@ -13,6 +13,9 @@ public class Base {
 
   private String url;
 
+  public Base() {
+  }
+
   public Base(String url, String name) {
     this.url = url;
     this.name = name;

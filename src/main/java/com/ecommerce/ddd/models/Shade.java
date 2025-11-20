@@ -13,6 +13,9 @@ public class Shade {
 
   private String url;
 
+  public Shade() {
+  }
+
   public Shade(String url, String name) {
     this.url = url;
     this.name = name;

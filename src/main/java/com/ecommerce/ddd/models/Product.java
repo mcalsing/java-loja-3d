@@ -24,7 +24,7 @@ public class Product {
   private Product() {
   }
 
-  public Product(double price, String lampBaseColor, Base lampBase, String lampShadeColor, Shade lampShade, String name) {
+  public Product(double price, String lampBaseColor, Base lampBase, String lampShadeColor, Shade lampShade) {
     this.price = price;
     this.lampBaseColor = lampBaseColor;
     this.lampBase = lampBase;
@@ -36,12 +36,12 @@ public class Product {
     return id;
   }
 
-  public Shade getLampShadeType() {
+  public Shade getLampShade() {
     return lampShade;
   }
 
-  public void setLampShadeType(Shade lampShadeType) {
-    this.lampShade = lampShadeType;
+  public void setLampShade(Shade lampShade) {
+    this.lampShade = lampShade;
   }
 
   public String getLampShadeColor() {
@@ -56,8 +56,8 @@ public class Product {
     return lampBase;
   }
 
-  public void setLampBase(Base lampBaseType) {
-    this.lampBase = lampBaseType;
+  public void setLampBase(Base lampBase) {
+    this.lampBase = lampBase;
   }
 
   public String getLampBaseColor() {

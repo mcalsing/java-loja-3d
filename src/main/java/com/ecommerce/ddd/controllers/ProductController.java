@@ -1,5 +1,6 @@
 package com.ecommerce.ddd.controllers;
 
+import com.ecommerce.ddd.dtos.ProductDTO;
 import com.ecommerce.ddd.models.Product;
 import com.ecommerce.ddd.services.ProductService;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class ProductController {
   }
 
   @PostMapping
-  public ResponseEntity<Product> create(@RequestBody Product product) {
-    return ResponseEntity.ok(service.create(product));
+  public ResponseEntity<Product> create(@RequestBody ProductDTO dto) {
+    return ResponseEntity.ok(service.create(dto));
   }
 }
